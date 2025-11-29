@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+numpy
+pandas
+opencv-python
+pillow
+matplotlib
+scikit-image
+tqdm
+lpips
+diffusers
+transformers
+accelerate
+safetensors
