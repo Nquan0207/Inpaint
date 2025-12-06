@@ -19,6 +19,7 @@ Quickstart
 What’s Included
 
 - Scratch model training (Simple U‑Net)
+
   - Input: 3‑channel occluded RGB + 1‑channel mask
   - Loss: Masked L1 in the hole + identity outside the mask
   - Blended previews: `pred = y_hat*mask + occ_rgb*(1-mask)` to preserve context
@@ -33,18 +34,6 @@ What’s Included
       - `--per-image K` create K variations per source image
       - `--src-dir`, `--out-dir`, `--seed`
 
-- Diffusion inpainting (manual loop)
-  - `model/manual_inpaint.py`: Stable Diffusion 1.5 inpainting loop without Pipeline
-  - Uses CLIP text encoder, VAE, UNet, DDIM scheduler (via diffusers)
-  - Example use inside Python:
-    - `from model.manual_inpaint import manual_sd15_inpaint`
-
-Run SD inpainting demo (optional)
-
-- The `model/run.py` demo uses segmentation to pick prompts and SDXL/SD‑1.5 inpaint.
-- Run from repo root as a package module:
-  - `python -m model.run`
-
 Notebook Tips
 
 - Paths
@@ -56,19 +45,6 @@ Notebook Tips
   - Generate more occlusions: `python Utils/gen_occ.py --num 1000 --size 0.18,0.30`
 - Speed
   - Apple M‑series (MPS) and CUDA are auto‑detected. CPU will be slower.
-
-Troubleshooting
-
-- “No such file or directory: data/occluded”
-  - Generate occlusions first: `python Utils/gen_occ.py --num 50`
-- Masks look inverted or predictions still gray
-  - Use the “Debug mask polarity” cell in the notebook; it writes `debug_*` images to `model/outputs/`.
-  - Ensure previews are saved from blended output, not the raw network output.
-- Mismatched names between clean and occluded
-  - Each occluded file `<stem>.jpg` must map to clean `<stem>.jpg` in `oxford-iiit-pet/images` and to mask `<stem>_mask.png` in `occluded`.
-  - If you used `--per-image > 1` (e.g., `_occ1` suffix), adjust the mapping in the Dataset as noted in the notebook.
-- OpenCV read error in `gen_occ.py`
-  - The script now skips unreadable files and supports `.jpg/.jpeg/.png` (any case). Verify `--src-dir` points to images.
 
 Repository Map
 
@@ -88,3 +64,15 @@ Notes on Masks
 License
 
 - Academic/experimental use. See dataset license for Oxford‑IIIT Pet.
+
+Related work:
+
+- https://arxiv.org/abs/2008.07173
+- https://arxiv.org/abs/1901.00212
+- https://arxiv.org/pdf/1801.07892
+- https://github.com/satoshiiizuka/siggraph2017_inpainting
+- https://iizuka.cs.tsukuba.ac.jp/projects/completion/data/completion_sig2017.pdf
+- v2: https://github.com/JiahuiYu/generative_inpainting
+- https://arxiv.org/pdf/2403.16016
+- https://arxiv.org/pdf/2211.13227
+- https://sites.skoltech.ru/app/data/uploads/sites/25/2018/04/deep_image_prior.pdf
