@@ -67,12 +67,18 @@ License
 
 Related work:
 
-- https://arxiv.org/abs/2008.07173
-- https://arxiv.org/abs/1901.00212
-- https://arxiv.org/pdf/1801.07892
-- https://github.com/satoshiiizuka/siggraph2017_inpainting
-- https://iizuka.cs.tsukuba.ac.jp/projects/completion/data/completion_sig2017.pdf
+- DeepGIN: https://arxiv.org/abs/2008.07173
+- Edge connect: https://arxiv.org/abs/1901.00212
+- Generative Image Inpainting with Contextual Attention: https://arxiv.org/pdf/1801.07892
+- Globally and Locally Consistent Image Completion: https://github.com/satoshiiizuka/siggraph2017_inpainting
+- Globally and Locally Consistent Image Completion: https://iizuka.cs.tsukuba.ac.jp/projects/completion/data/completion_sig2017.pdf
 - v2: https://github.com/JiahuiYu/generative_inpainting
-- https://arxiv.org/pdf/2403.16016
-- https://arxiv.org/pdf/2211.13227
-- https://sites.skoltech.ru/app/data/uploads/sites/25/2018/04/deep_image_prior.pdf
+- diffusion-based image inpainting pipeline: https://arxiv.org/pdf/2403.16016
+- Exemplar-based Image Editing with Diffusion Models: https://arxiv.org/pdf/2211.13227
+- U-Net: https://arxiv.org/pdf/1505.04597
+- contextencoders: https://arxiv.org/pdf/1604.07379
+- Generative Adversarial Nets: https://arxiv.org/pdf/1406.2661
+- Conditional Adversarial Networks: https://arxiv.org/pdf/1611.07004
+- RePaint: Inpainting using Denoising Diffusion Probabilistic Models: https://arxiv.org/pdf/2201.09865
+- High-Resolution Image Synthesis with Latent Diffusion Models: https://arxiv.org/pdf/2112.10752
+- Denoising Diffusion Probabilistic Models: https://arxiv.org/abs/2006.11239
