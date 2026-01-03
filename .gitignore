@@ -1,2 +1,6 @@
 # Ignore datasets and generated artifacts
 data/
+
+# Ignore debug artifacts
+model/outputs/debug_*
+model/debug_*.png
